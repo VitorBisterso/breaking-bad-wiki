@@ -3,14 +3,14 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Observable, Observer } from 'rxjs';
 
 import { HomeComponent } from './home.component';
-import { CharacterService } from '../services/character.service';
+import { CharacterService } from '../services/character/character.service';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
       imports: [HttpClientTestingModule]
-    });
+    }).compileComponents();
   }));
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

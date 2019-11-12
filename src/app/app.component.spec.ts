@@ -4,12 +4,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientTestingModule],
-      declarations: [AppComponent, HomeComponent]
+      declarations: [AppComponent, HomeComponent, MenuComponent]
     }).compileComponents();
   }));
 
