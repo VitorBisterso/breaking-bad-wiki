@@ -11,7 +11,7 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --fix"
+        "pre-commit": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --fix && ng test --watch=false"
     }
   },
   "private": true,
