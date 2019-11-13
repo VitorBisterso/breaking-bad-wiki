@@ -1,12 +1,12 @@
 <ul>
   <div>
-    <a routerLink="/home">Breaking Bad Wiki</a>
+    <img src="https://image.flaticon.com/icons/svg/906/906551.svg" />
+    <a routerLink="/home">
+      Breaking Bad Wiki
+    </a>
     <p> - powered by <a href="https://breakingbadapi.com"> The Breaking Bad API</a></p>
   </div>
   <div>
-    <a routerLink="/home">
-      <img src="https://image.flaticon.com/icons/svg/906/906551.svg" />
-    </a>
     <li *ngFor="let menuItem of menuItems">
       <a [class.active]="currentRoute === menuItem.route" routerLink="{{ menuItem.route }}">{{ menuItem.name }}</a>
     </li>
