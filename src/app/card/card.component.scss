@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 320px;
+}
+
+img {
+  max-height: 300px;
+}
+
+.content {
+  padding: 8px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(72, 127, 90, 1);
+  & > span {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(39, 39, 39, 0.5);
+  }
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 300;
+  & > p:first-of-type {
+    color: rgba(72, 127, 90, 1);
+  }
+  & > p:last-of-type {
+    color: rgba(39, 39, 39, 0.5);
+  }
+}
