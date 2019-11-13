@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CharacterService } from '../services/character/character.service';
-import { Character } from '../models/character';
+import { RandomQuote } from '../models/random-quote';
+import { RandomQuoteService } from '../services/random-quote/random-quote.service';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +9,17 @@ import { Character } from '../models/character';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  characters: Character[];
+  randomQuote: RandomQuote;
 
-  constructor(private characterService: CharacterService) {}
+  constructor(private randomQuoteService: RandomQuoteService) {}
 
   ngOnInit(): void {
-    this.getCharacters();
+    this.getRandomQuote();
   }
 
-  getCharacters(): void {
-    this.characterService
-      .getCharacters()
-      .subscribe(characters => (this.characters = characters));
+  getRandomQuote(): void {
+    this.randomQuoteService
+      .getRandomQuote('Walter White')
+      .subscribe(randomQuote => (this.randomQuote = randomQuote[0]));
   }
 }

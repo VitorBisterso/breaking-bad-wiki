@@ -1,6 +1,43 @@
 .container {
-  height: 90vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 90vh;
+  flex-direction: column;
+  color: rgba(59, 59, 59, 1);
+}
+
+.center {
+  justify-content: center;
+}
+
+.quote {
+  font-weight: 500;
+  margin-top: 5%;
+  & > span {
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Breaking Bad', sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    color: rgba(72, 127, 90, 1);
+  }
+}
+
+.main-content {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 22px;
+  & > p:first-of-type {
+    font-size: 30px;
+    font-weight: 300;
+    color: rgba(72, 127, 90, 1);
+  }
+  & > p > a {
+    color: rgba(59, 59, 59, 1);
+  }
+  & > p > a:hover {
+    transition: 0.2s;
+    color: rgba(72, 127, 90, 1);
+  }
 }

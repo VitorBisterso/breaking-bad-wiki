@@ -1,8 +1,16 @@
-<div class="container">
-  <app-spin [isVisible]="!characters"></app-spin>
-  <ul>
-    <li *ngFor="let character of characters">
-      <p>{{ character.name }}</p>
-    </li>
-  </ul>
+<div [ngClass]="{'container': true, 'center': !randomQuote}">
+  <app-spin [isVisible]="!randomQuote"></app-spin>
+  <div *ngIf="randomQuote" class="main-content">
+    <p>Welcome to the Breaking Bad Wiki!</p>
+    <p>
+      Here you can see all characters, who they are responsible for killing
+      and many other things! All the data is from
+      <a href="https://breakingbadapi.com"> The Breaking Bad API</a>.
+      I hope you enjoy!
+    </p>
+  </div>
+  <div *ngIf="randomQuote" class="quote">
+    <p>"{{ randomQuote.quote }}"</p>
+    <span>{{ randomQuote.author }}</span>
+  </div>
 </div>

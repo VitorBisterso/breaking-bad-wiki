@@ -2,7 +2,7 @@ import { async, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Observable, Observer } from 'rxjs';
 
-import { CharacterService } from '../services/character/character.service';
+import { RandomQuoteService } from '../services/random-quote/random-quote.service';
 import { HomeComponent } from './home.component';
 import { SpinComponent } from '../spin/spin.component';
 
@@ -18,9 +18,9 @@ describe('HomeComponent', () => {
   const setup = (): Record<string, any> => {
     const fixture = TestBed.createComponent(HomeComponent);
     const app = fixture.debugElement.componentInstance;
-    const characterService = fixture.debugElement.injector.get(CharacterService);
+    const randomQuoteService = fixture.debugElement.injector.get(RandomQuoteService);
 
-    return { fixture, app, characterService };
+    return { fixture, app, randomQuoteService };
   };
 
   it('should create', () => {
@@ -28,21 +28,25 @@ describe('HomeComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should display a character name', fakeAsync(() => {
-    const { fixture, characterService } = setup();
-    const mockCharacter = [{ name: 'name' }];
-    spyOn(characterService, 'getCharacters').and.returnValue(
-      Observable.create((observer: Observer<Array<{ name: string }>>) => {
-        observer.next(mockCharacter);
-        return observer;
-      })
+  it('should display a random quote', fakeAsync(() => {
+    const { fixture, randomQuoteService } = setup();
+    const mockQuote = [
+      { quote: 'I am not in danger, Skyler. I am the danger!', author: 'Walter White' }
+    ];
+    spyOn(randomQuoteService, 'getRandomQuote').and.returnValue(
+      Observable.create(
+        (observer: Observer<Array<{ quote: string; author: string }>>) => {
+          observer.next(mockQuote);
+          return observer;
+        }
+      )
     );
 
     tick();
 
     fixture.detectChanges();
     const asyncElement = fixture.debugElement.nativeElement;
-    const characterName = asyncElement.querySelector('p');
-    expect(characterName.textContent).toBe('name');
+    const author = asyncElement.querySelector('span');
+    expect(author.textContent).toBe('Walter White');
   }));
 });
