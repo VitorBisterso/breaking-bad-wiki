@@ -13,7 +13,6 @@
 
 .quote {
   font-weight: 500;
-  margin-top: 5%;
   & > span {
     display: flex;
     justify-content: flex-end;
@@ -25,7 +24,6 @@
 }
 
 .main-content {
-  margin-top: 5%;
   text-align: center;
   font-size: 22px;
   & > p:first-of-type {
