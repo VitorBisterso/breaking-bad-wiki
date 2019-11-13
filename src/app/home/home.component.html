@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="!characters" class="loading"></div>
+  <app-spin [isVisible]="!characters"></app-spin>
   <ul>
     <li *ngFor="let character of characters">
       <p>{{ character.name }}</p>

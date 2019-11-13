@@ -2,13 +2,14 @@ import { async, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Observable, Observer } from 'rxjs';
 
-import { HomeComponent } from './home.component';
 import { CharacterService } from '../services/character/character.service';
+import { HomeComponent } from './home.component';
+import { SpinComponent } from '../spin/spin.component';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent],
+      declarations: [HomeComponent, SpinComponent],
       imports: [HttpClientTestingModule]
     }).compileComponents();
   }));

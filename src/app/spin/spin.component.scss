@@ -1,0 +1,17 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 80px;
+  height: 80px;
+  border-top: 2px solid rgba(72, 127, 90, 1);
+  border-radius: 100%;
+  animation: 1s linear spin;
+  animation-iteration-count: infinite;
+}
