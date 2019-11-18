@@ -13,8 +13,6 @@ export class CharacterService {
   constructor(private http: HttpClient) {}
 
   getCharacters(): Observable<Character[]> {
-    return this.http
-      .get<Character[]>(`${url}/characters?category=Breaking+Bad`)
-      .pipe(catchError(handleError));
+    return this.http.get<Character[]>(`${url}/characters`).pipe(catchError(handleError));
   }
 }

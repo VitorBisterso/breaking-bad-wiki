@@ -61,7 +61,7 @@ describe('CharacterService', () => {
     });
 
     const req = httpTestingController.expectOne(
-      'https://www.breakingbadapi.com/api/characters?category=Breaking+Bad'
+      'https://www.breakingbadapi.com/api/characters'
     );
 
     expect(req.request.method).toBe('GET');

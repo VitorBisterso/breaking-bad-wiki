@@ -1,0 +1,14 @@
+<div *ngIf="!characters" class="center">
+  <app-spin [isVisible]="!characters"></app-spin>
+</div>
+<div *ngIf="characters" class="container">
+  <div *ngFor="let character of characters" class="item">
+    <app-card
+      name="{{ character.name }}"
+      nickname="{{ character.nickname }}"
+      occupation="{{ character.occupation[0] }}"
+      status="{{ character.status }}"
+      img="{{ character.img }}"
+    ></app-card>
+  </div>
+</div>

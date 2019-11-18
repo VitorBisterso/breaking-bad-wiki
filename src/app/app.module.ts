@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { CardComponent } from './card/card.component';
 import { SpinComponent } from './spin/spin.component';
+import { CharactersComponent } from './characters/characters.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SpinComponent } from './spin/spin.component';
     HomeComponent,
     MenuComponent,
     CardComponent,
-    SpinComponent
+    SpinComponent,
+    CharactersComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
